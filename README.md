@@ -55,6 +55,15 @@ datapack.*
 Find this mod on [**Modrinth**](https://modrinth.com/mod/create-power-loader) or
 [**CurseForge**](https://legacy.curseforge.com/minecraft/mc-mods/create-power-loader).
 
+## Building / releasing a JAR
+
+1. Install **JDK 21** (the mod toolchain targets Java 21).
+2. From the project root, run `./gradlew build` (or `gradlew.bat build` on Windows).
+3. The distributable JAR will be created at `build/libs/create_power_loader-<version>.jar` using the version defined in `gradle.properties`.
+4. Upload that JAR to your platform of choice (e.g., Modrinth or CurseForge).
+
+If you are producing a new release, bump `mod_version` in `gradle.properties` before running the build so the filename and embedded metadata match the release number.
+
 ## Usage
 
 **In modpacks:**
