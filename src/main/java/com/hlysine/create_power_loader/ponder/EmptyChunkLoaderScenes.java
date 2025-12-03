@@ -8,7 +8,7 @@ import net.createmod.ponder.api.scene.SceneBuildingUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Ghast;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.phys.Vec3;
 
 import net.minecraft.world.entity.Entity;
@@ -25,11 +25,11 @@ public class EmptyChunkLoaderScenes {
         BlockPos center = util.grid().at(5, 1, 5);
 
         scene.world().createEntity(w -> {
-            Ghast ghastEntity = EntityType.GHAST.create(w);
+            EnderMan endermanEntity = EntityType.ENDERMAN.create(w);
             Vec3 v = util.vector().topOf(center);
-            ghastEntity.setPosRaw(v.x, v.y, v.z);
-            ghastEntity.setYRot(ghastEntity.yRotO = 180);
-            return ghastEntity;
+            endermanEntity.setPosRaw(v.x, v.y, v.z);
+            endermanEntity.setYRot(endermanEntity.yRotO = 180);
+            return endermanEntity;
         });
 
         scene.idle(20);
@@ -38,7 +38,7 @@ public class EmptyChunkLoaderScenes {
                 .withItem(CPLBlocks.EMPTY_ANDESITE_CHUNK_LOADER.asStack());
         scene.idle(10);
         scene.overlay().showText(70)
-                .text("Right-click a Ghast with an empty chunk loader to capture it")
+                .text("Right-click an Enderman with an empty chunk loader to capture it")
                 .attachKeyFrame()
                 .pointAt(util.vector().blockSurface(center.above(4), Direction.WEST))
                 .placeNearTarget();
@@ -48,7 +48,7 @@ public class EmptyChunkLoaderScenes {
                 .withItem(CPLBlocks.EMPTY_BRASS_CHUNK_LOADER.asStack());
         scene.idle(50);
 
-        scene.world().modifyEntities(Ghast.class, Entity::discard);
+        scene.world().modifyEntities(EnderMan.class, Entity::discard);
         scene.idle(20);
 
         BlockPos loader = util.grid().at(4, 2, 5);
@@ -57,7 +57,7 @@ public class EmptyChunkLoaderScenes {
         scene.world().showSection(util.select().layers(1, 2), Direction.DOWN);
         scene.world().modifyKineticSpeed(util.select().everywhere(), f -> f / 8f);
         scene.overlay().showText(70)
-                .text("With rotational power, the captured ghasts light up the portal cores...")
+                .text("With rotational power, the captured endermen light up the portal cores...")
                 .attachKeyFrame()
                 .pointAt(util.vector().blockSurface(loader.west(), Direction.WEST))
                 .placeNearTarget();
