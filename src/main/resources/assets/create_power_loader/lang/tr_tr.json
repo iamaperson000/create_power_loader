@@ -12,8 +12,8 @@
   "create_power_loader.brass_chunk_loader.load_5x5": "5x5 Kare",
   
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "Boş Yığın Yükleyicilerin Kullanımı",
-  "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Bir boş yığın yükleyici ile bir Ghast'a sağ tıklayarak onu yakalayın",
-  "create_power_loader.ponder.empty_chunk_loader_basic.text_2": "Dönme gücüyle, yakalanan Ghast'lar portal çekirdeklerini aydınlatır...",
+  "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Bir boş yığın yükleyici ile bir Enderman'a sağ tıklayarak onu yakalayın",
+  "create_power_loader.ponder.empty_chunk_loader_basic.text_2": "Dönme gücüyle, yakalanan Enderman'lar portal çekirdeklerini aydınlatır...",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_3": "...yığın yükleyicilere hayat verir",
   
   "create_power_loader.ponder.andesite_chunk_loader_basic.header": "Andezit Yığın Yükleyicinin Temel Kullanımı",
