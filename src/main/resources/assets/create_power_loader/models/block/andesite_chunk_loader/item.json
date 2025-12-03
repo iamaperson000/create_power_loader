@@ -9,7 +9,7 @@
 		"6": "create_power_loader:block/core_frame",
 		"7": "axis",
 		"8": "axis_top",
-		"9": "create_power_loader:block/ghast",
+		"9": "create_power_loader:block/enderman",
 		"particle": "create_power_loader:block/andesite_chunk_loader_side"
 	},
 	"elements": [

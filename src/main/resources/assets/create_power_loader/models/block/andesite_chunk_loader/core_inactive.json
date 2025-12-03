@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"9": "create_power_loader:block/core_frame",
-		"10": "create_power_loader:block/ghast",
+		"10": "create_power_loader:block/enderman",
 		"particle": "create_power_loader:block/core_frame"
 	},
 	"elements": [

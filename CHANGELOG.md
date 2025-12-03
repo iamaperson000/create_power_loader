@@ -135,13 +135,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Empty chunk loaders which can capture ghasts to become functional chunk loaders
-- Ponder scenes for ghast capturing
+- Empty chunk loaders which can capture endermen to become functional chunk loaders
+- Ponder scenes for enderman capturing
 - Configs to control whether chunk loaders work on contraptions
 
 ### Changed
 
-- Chunk loader core texture to include a ghast
+- Chunk loader core texture to include an enderman
 
 ## 1.1.1 - 2023-11-14
 

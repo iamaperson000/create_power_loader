@@ -12,8 +12,8 @@
   "create_power_loader.brass_chunk_loader.load_5x5": "Carré de 5x5 ",
 
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "Utilisation des chargeurs de chunk vides",
-  "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Clic droit sur un ghast avec un chargeur de chunk vide pour le capturer",
-  "create_power_loader.ponder.empty_chunk_loader_basic.text_2": "Avec la force de rotation, le ghast capturé alimente les noyaux du portail...",
+  "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Clic droit sur un enderman avec un chargeur de chunk vide pour le capturer",
+  "create_power_loader.ponder.empty_chunk_loader_basic.text_2": "Avec la force de rotation, les endermen capturés alimentent les noyaux du portail...",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_3": "...donnant vie au chargeur de chunk",
 
   "create_power_loader.ponder.andesite_chunk_loader_basic.header": "Utilisation simple du chargeur de chunk en andésite",
