@@ -10,6 +10,9 @@
   "create_power_loader.brass_chunk_loader.load_1x1": "1x1 矩形",
   "create_power_loader.brass_chunk_loader.load_3x3": "3x3 矩形",
   "create_power_loader.brass_chunk_loader.load_5x5": "5x5 矩形",
+  "create_power_loader.brass_chunk_loader.load_7x7": "7x7 矩形",
+  "create_power_loader.brass_chunk_loader.load_9x9": "9x9 矩形",
+  "create_power_loader.brass_chunk_loader.load_10x10": "10x10 矩形",
 
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "空的区块加载器用法",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "手持空的区块加载器右击恶魂来捕获它",

@@ -10,6 +10,9 @@
   "create_power_loader.brass_chunk_loader.load_1x1": "1x1 Kare",
   "create_power_loader.brass_chunk_loader.load_3x3": "3x3 Kare",
   "create_power_loader.brass_chunk_loader.load_5x5": "5x5 Kare",
+  "create_power_loader.brass_chunk_loader.load_7x7": "7x7 Kare",
+  "create_power_loader.brass_chunk_loader.load_9x9": "9x9 Kare",
+  "create_power_loader.brass_chunk_loader.load_10x10": "10x10 Kare",
   
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "Boş Yığın Yükleyicilerin Kullanımı",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Bir boş yığın yükleyici ile bir Enderman'a sağ tıklayarak onu yakalayın",

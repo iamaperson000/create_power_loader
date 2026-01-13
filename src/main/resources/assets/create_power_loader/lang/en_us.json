@@ -10,6 +10,9 @@
   "create_power_loader.brass_chunk_loader.load_1x1": "1x1 Square",
   "create_power_loader.brass_chunk_loader.load_3x3": "3x3 Square",
   "create_power_loader.brass_chunk_loader.load_5x5": "5x5 Square",
+  "create_power_loader.brass_chunk_loader.load_7x7": "7x7 Square",
+  "create_power_loader.brass_chunk_loader.load_9x9": "9x9 Square",
+  "create_power_loader.brass_chunk_loader.load_10x10": "10x10 Square",
 
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "Usage of Empty Chunk Loaders",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Right-click an Enderman with an empty chunk loader to capture it",

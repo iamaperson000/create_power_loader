@@ -54,11 +54,22 @@ public class BrassChunkLoaderBlockEntity extends AbstractChunkLoaderBlockEntity 
 
     @Override
     public int getLoadingRange() {
-        return loadingRange.getValue() + 1;
+        return loadingRange.getValue().getRadius();
     }
 
     public void setLoadingRange(int range) {
-        loadingRange.setValue(range - 1);
+        for (LoadingRange option : LoadingRange.values()) {
+            if (option.getRadius() == range && !option.isEven()) {
+                loadingRange.setValue(option.ordinal());
+                return;
+            }
+        }
+        loadingRange.setValue(Math.max(0, Math.min(range - 1, LoadingRange.values().length - 1)));
+    }
+
+    @Override
+    protected boolean usesEvenLoadingRange() {
+        return loadingRange.getValue().isEven();
     }
 
     private static class LoadingRangeValueBox extends CenteredSideValueBoxTransform {
@@ -88,22 +99,37 @@ public class BrassChunkLoaderBlockEntity extends AbstractChunkLoaderBlockEntity 
     }
 
     public enum LoadingRange implements INamedIconOptions {
-        LOAD_1x1(CPLIcons.I_1x1),
-        LOAD_3x3(CPLIcons.I_3x3),
-        LOAD_5x5(CPLIcons.I_5x5),
+        LOAD_1x1(CPLIcons.I_1x1, 1, false),
+        LOAD_3x3(CPLIcons.I_3x3, 2, false),
+        LOAD_5x5(CPLIcons.I_5x5, 3, false),
+        LOAD_7x7(CPLIcons.I_5x5, 4, false),
+        LOAD_9x9(CPLIcons.I_5x5, 5, false),
+        LOAD_10x10(CPLIcons.I_5x5, 5, true),
         ;
 
         private final String translationKey;
         private final AllIcons icon;
+        private final int radius;
+        private final boolean even;
 
-        LoadingRange(AllIcons icon) {
+        LoadingRange(AllIcons icon, int radius, boolean even) {
             this.icon = icon;
+            this.radius = radius;
+            this.even = even;
             this.translationKey = CreatePowerLoader.MODID + ".brass_chunk_loader." + Lang.asId(name());
         }
 
         @Override
         public AllIcons getIcon() {
             return icon;
+        }
+
+        public int getRadius() {
+            return radius;
+        }
+
+        public boolean isEven() {
+            return even;
         }
 
         @Override
