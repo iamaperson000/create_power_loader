@@ -10,6 +10,9 @@
   "create_power_loader.brass_chunk_loader.load_1x1": "Carré de 1x1",
   "create_power_loader.brass_chunk_loader.load_3x3": "Carré de 3x3",
   "create_power_loader.brass_chunk_loader.load_5x5": "Carré de 5x5 ",
+  "create_power_loader.brass_chunk_loader.load_7x7": "Carré de 7x7",
+  "create_power_loader.brass_chunk_loader.load_9x9": "Carré de 9x9",
+  "create_power_loader.brass_chunk_loader.load_10x10": "Carré de 10x10",
 
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "Utilisation des chargeurs de chunk vides",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Clic droit sur un enderman avec un chargeur de chunk vide pour le capturer",
@@ -49,4 +52,3 @@
   "create_power_loader.ponder.brass_chunk_loader_station.text_4": "Quand un train arrive à la station, une zone de 3x3 chunks est chargée autour du chargeur",
   "create_power_loader.ponder.brass_chunk_loader_station.text_5": "Quand le train repart, la zone est à nouveau déchargée"
 }
-

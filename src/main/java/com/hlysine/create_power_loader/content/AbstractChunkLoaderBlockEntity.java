@@ -37,6 +37,7 @@ public abstract class AbstractChunkLoaderBlockEntity extends KineticBlockEntity 
     protected BlockPos lastBlockPos;
     protected boolean lastEnabled;
     protected int lastRange;
+    protected boolean lastEvenRange;
     protected int chunkUpdateCooldown;
     protected int chunkUnloadCooldown;
     protected Set<LoadedChunkPos> forcedChunks = new HashSet<>();
@@ -150,13 +151,17 @@ public abstract class AbstractChunkLoaderBlockEntity extends KineticBlockEntity 
 
     private boolean needsUpdate() {
         if (lastBlockPos == null) return true;
-        return !lastBlockPos.equals(getBlockPos()) || lastEnabled != canLoadChunks() || lastRange != getLoadingRange() || chunkUnloadCooldown > 0;
+        return !lastBlockPos.equals(getBlockPos())
+                || lastEnabled != canLoadChunks()
+                || lastRange != getLoadingRange()
+                || lastEvenRange != usesEvenLoadingRange()
+                || chunkUnloadCooldown > 0;
     }
 
     protected void updateForcedChunks() {
         boolean resetStates = true;
         if (canLoadChunks()) {
-            ChunkLoadManager.updateForcedChunks(level.getServer(), new LoadedChunkPos(getLevel(), getBlockPos()), getBlockPos(), getLoadingRange(), forcedChunks);
+            ChunkLoadManager.updateForcedChunks(level.getServer(), new LoadedChunkPos(getLevel(), getBlockPos()), getBlockPos(), getLoadingRange(), usesEvenLoadingRange(), forcedChunks);
         } else if (chunkUnloadCooldown >= CPLConfigs.server().getFor(type).unloadGracePeriod.get()) {
             unforceAllChunks(level.getServer(), getBlockPos(), forcedChunks);
         } else {
@@ -168,6 +173,7 @@ public abstract class AbstractChunkLoaderBlockEntity extends KineticBlockEntity 
             lastBlockPos = getBlockPos().immutable();
             lastEnabled = canLoadChunks();
             lastRange = getLoadingRange();
+            lastEvenRange = usesEvenLoadingRange();
         }
     }
 
@@ -224,6 +230,10 @@ public abstract class AbstractChunkLoaderBlockEntity extends KineticBlockEntity 
     }
 
     public abstract int getLoadingRange();
+
+    protected boolean usesEvenLoadingRange() {
+        return false;
+    }
 
     protected void spawnParticles() {
         if (level == null)

@@ -10,6 +10,9 @@
   "create_power_loader.brass_chunk_loader.load_1x1": "Квадрат 1x1",
   "create_power_loader.brass_chunk_loader.load_3x3": "Квадрат 3x3",
   "create_power_loader.brass_chunk_loader.load_5x5": "Квадрат 5x5",
+  "create_power_loader.brass_chunk_loader.load_7x7": "Квадрат 7x7",
+  "create_power_loader.brass_chunk_loader.load_9x9": "Квадрат 9x9",
+  "create_power_loader.brass_chunk_loader.load_10x10": "Квадрат 10x10",
 
   "create_power_loader.ponder.empty_chunk_loader_basic.header": "Поимкой гастов в пустые загрузчики",
   "create_power_loader.ponder.empty_chunk_loader_basic.text_1": "Кликните ПКМ по гасту с пустым загрузчиком, чтобы захватить его",

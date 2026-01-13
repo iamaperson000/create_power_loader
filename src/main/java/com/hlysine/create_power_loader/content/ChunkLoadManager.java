@@ -74,10 +74,23 @@ public class ChunkLoadManager {
         updateForcedChunks(server, targetChunks, owner, forcedChunks);
     }
 
+    public static <T extends Comparable<? super T>> void updateForcedChunks(MinecraftServer server, LoadedChunkPos center, T owner, int loadingRange, boolean even, Set<LoadedChunkPos> forcedChunks) {
+        Set<LoadedChunkPos> targetChunks = getChunksAroundCenter(center, loadingRange, even);
+        updateForcedChunks(server, targetChunks, owner, forcedChunks);
+    }
+
     public static <T extends Comparable<? super T>> void updateForcedChunks(MinecraftServer server, Collection<LoadedChunkPos> centers, T owner, int loadingRange, Set<LoadedChunkPos> forcedChunks) {
         Set<LoadedChunkPos> targetChunks = new HashSet<>();
         for (LoadedChunkPos center : centers) {
             targetChunks.addAll(getChunksAroundCenter(center, loadingRange));
+        }
+        updateForcedChunks(server, targetChunks, owner, forcedChunks);
+    }
+
+    public static <T extends Comparable<? super T>> void updateForcedChunks(MinecraftServer server, Collection<LoadedChunkPos> centers, T owner, int loadingRange, boolean even, Set<LoadedChunkPos> forcedChunks) {
+        Set<LoadedChunkPos> targetChunks = new HashSet<>();
+        for (LoadedChunkPos center : centers) {
+            targetChunks.addAll(getChunksAroundCenter(center, loadingRange, even));
         }
         updateForcedChunks(server, targetChunks, owner, forcedChunks);
     }
@@ -115,9 +128,17 @@ public class ChunkLoadManager {
     }
 
     private static Set<LoadedChunkPos> getChunksAroundCenter(LoadedChunkPos center, int radius) {
+        return getChunksAroundCenter(center, radius, false);
+    }
+
+    private static Set<LoadedChunkPos> getChunksAroundCenter(LoadedChunkPos center, int radius, boolean even) {
         Set<LoadedChunkPos> ret = new HashSet<>();
-        for (int i = center.x() - radius + 1; i <= center.x() + radius - 1; i++) {
-            for (int j = center.z() - radius + 1; j <= center.z() + radius - 1; j++) {
+        int min = center.x() - radius + 1;
+        int max = center.x() + radius - 1 + (even ? 1 : 0);
+        int minZ = center.z() - radius + 1;
+        int maxZ = center.z() + radius - 1 + (even ? 1 : 0);
+        for (int i = min; i <= max; i++) {
+            for (int j = minZ; j <= maxZ; j++) {
                 ret.add(new LoadedChunkPos(center.dimension(), i, j));
             }
         }
