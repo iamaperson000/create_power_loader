@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 @MethodsReturnNonnullByDefault
 public class AndesiteChunkLoaderBlockEntity extends AbstractChunkLoaderBlockEntity {
-    private static final int LOADING_RANGE = 1;
+    private static final int LOADING_RANGE = 3;
 
     public AndesiteChunkLoaderBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state, LoaderType.ANDESITE);
